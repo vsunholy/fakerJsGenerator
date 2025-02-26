@@ -52,7 +52,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question('Kiek duomenu noretumete suvesti i failus?', (dataCount) => {
+rl.question('Kiek duomenu noretumete suvesti i failus?\n', (dataCount) => {
     
 
 
