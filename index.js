@@ -1,7 +1,18 @@
 const { faker } = require('@faker-js/faker');
 const fs = require('fs');
+const readline = require('readline');
 
 // generate data
+const jsonToCsv = (jsonArray) => {
+    const csvHeader = Object.keys(jsonArray[0]).join(',') + '\n';
+    let csvRows = '';
+    for (let i = 0; i < jsonArray.length; i++) {
+        let csvRow = Object.values(jsonArray[i]).join(',') + '\n';
+        csvRows += csvRow;
+    }
+    return csvHeader + csvRows;
+
+}
 
 const generateUser = _ => {
     return {
@@ -31,41 +42,41 @@ const generateCategory = _ => {
 }
 
 const generateCompany = _ => {
-    return{
+    return {
         "title": faker.company.name(),
     }
 }
+//terminal reading
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-
-const users = Array.from({ length: 1 }, generateUser);
-const products = Array.from({ length: 2 }, generateProduct);
-const categories = Array.from({ length: 3 }, generateCategory);
-const companies = Array.from({ length: 4 }, generateCompany);
-
-// save data to file
-
-fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
-fs.writeFileSync('products.json', JSON.stringify(products, null, 2));
-fs.writeFileSync('categories.json', JSON.stringify(categories, null, 2));
-fs.writeFileSync('companies.json', JSON.stringify(companies, null, 2));
-
-
-// save to csv file
-// const json2csv = require('json2csv').parse;
-// const csv = json2csv(users)
-// const csv1 = json2csv(products)
-// const csv2 = json2csv(categories)
-// const csv3 = json2csv(companies)
-// fs.writeFileSync('products.csv', csv);
-// fs.writeFileSync('products.csv', csv1);
-// fs.writeFileSync('categories.csv', csv2);
-// fs.writeFileSync('companies.csv', csv3);
-
-const csvHeader = Object.keys(users[0]).join(',') + '\n';
-let csvRows = '';
-for (let i = 0; i < users.length; i++) {
-    let csvRow = Object.values(users[i]).join(',') + '\n';
-    csvRows += csvRow;
+rl.question('Kiek duomenu noretumete suvesti i failus?', (dataCount) => {
     
-}
-fs.writeFileSync('users.csv', csvHeader + csvRows);
+
+
+const users = Array.from({ length: dataCount }, generateUser);
+const products = Array.from({ length: dataCount }, generateProduct);
+const categories = Array.from({ length: dataCount }, generateCategory);
+const companies = Array.from({ length: dataCount }, generateCompany);
+
+// save data to  json file
+
+fs.writeFileSync('json/users.json', JSON.stringify(users, null, 2));
+fs.writeFileSync('json/products.json', JSON.stringify(products, null, 2));
+fs.writeFileSync('json/categories.json', JSON.stringify(categories, null, 2));
+fs.writeFileSync('json/companies.json', JSON.stringify(companies, null, 2));
+
+// save data to csv
+
+fs.writeFileSync('csv/users.csv', jsonToCsv(users));
+fs.writeFileSync('csv/products.csv', jsonToCsv(products));
+fs.writeFileSync('csv/categories.csv', jsonToCsv(categories));
+fs.writeFileSync('csv/companies.csv', jsonToCsv(companies));
+
+console.log('Data generated successfully'  + dataCount);
+
+
+rl.close();
+})
