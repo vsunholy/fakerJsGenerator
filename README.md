@@ -1,3 +1,48 @@
+# 🚀 Cypress Automation Project 🌟
+
+![Cypress](https://img.shields.io/badge/Cypress-Testing-green?style=for-the-badge&logo=cypress&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript&logoColor=black) ![QA Automation](https://img.shields.io/badge/QA%20Automation-Powered%20by%20Cypress-blue?style=for-the-badge)
+
+🚀 A modern Cypress automation project covering UI & API testing based on [AutomationExercise.com](https://www.automationexercise.com) test cases.
+
+---
+
+## 🌟 Features & Highlights  
+
+- 🔥 **Complete Automation Suite:** Covers essential UI and API test cases.  
+- 📊 **Detailed Reports:** Automatically generates test reports for better insights.  
+- 🤖 **CI/CD Ready:** Easily integrates with GitHub Actions & Jenkins for automation.  
+- 📱 **Responsive Testing:** Ensures web compatibility across different screen sizes.  
+- 💾 **Data-Driven Approach:** Uses JSON fixtures to make tests dynamic and reusable.  
+
+---
+
+## 🌍 Table of Contents
+
+- [🤦 Tech Stack](#-tech-stack)
+- [🎯 Test Cases Implemented](#-test-cases-implemented)
+- [🔗 API Testing](#-api-testing)
+- [🚀 Getting Started](#-getting-started)
+- [▶ Running Tests](#-running-tests)
+- [📊 Test Reports](#-test-reports)
+- [👨‍💻 Contributing](#-contributing)
+- [📝 License](#-license)
+
+---
+
+## 🤦 Tech Stack  
+
+| Technology | Purpose |
+|------------|---------|
+| 🟢 **Cypress** | End-to-End UI & API Testing |
+| 💛 **JavaScript (ES6+)** | Writing clear & maintainable test scripts |
+| 📂 **Mocha + Chai** | Assertion & Test Framework |
+| 💽 **Axios** | API Testing & Request Handling |
+| 🎭 **Faker.js** | Data generation for test scenarios |
+| 📊 **Allure Reports** | Beautiful test reports |
+
+---
+
+## 🎯 Test Cases Implemented  
 
 ✔ **User Authentication:**  
 - 📝 Register a new user  
@@ -106,9 +151,5 @@ Licensed under the **MIT License**.
 
 ---
 
-<p align="center">✨ Happy Testing & Keep Automating! ✨</p>
-
-<p align="center">
-  <img src="https://media.giphy.com/media/1xVbXoJzRO2I/giphy.gif" width="200" />
-</p>
+✨ Happy Testing & Keep Automating! ✨
 
